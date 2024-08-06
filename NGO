@@ -1,0 +1,149 @@
+import json
+
+class SocialMediaPlan:
+    def __init__(self):
+        self.plan = {
+            "Goals": {},
+            "TargetAudience": {},
+            "Platforms": {},
+            "ContentStrategy": {},
+            "PostingSchedule": {},
+            "Engagement": {},
+            "Advertising": {},
+            "Metrics": {},
+            "Review": {}
+        }
+    
+    def set_goals(self, goals):
+        self.plan["Goals"] = goals
+    
+    def set_target_audience(self, audience):
+        self.plan["TargetAudience"] = audience
+    
+    def set_platforms(self, platforms):
+        self.plan["Platforms"] = platforms
+    
+    def set_content_strategy(self, strategy):
+        self.plan["ContentStrategy"] = strategy
+    
+    def set_posting_schedule(self, schedule):
+        self.plan["PostingSchedule"] = schedule
+    
+    def set_engagement(self, engagement):
+        self.plan["Engagement"] = engagement
+    
+    def set_advertising(self, advertising):
+        self.plan["Advertising"] = advertising
+    
+    def set_metrics(self, metrics):
+        self.plan["Metrics"] = metrics
+    
+    def set_review(self, review):
+        self.plan["Review"] = review
+    
+    def save_to_file(self, filename):
+        with open(filename, 'w') as f:
+            json.dump(self.plan, f, indent=4)
+    
+    def load_from_file(self, filename):
+        with open(filename, 'r') as f:
+            self.plan = json.load(f)
+    
+    def display_plan(self):
+        print(json.dumps(self.plan, indent=4))
+
+# Initialize the social media plan
+plan = SocialMediaPlan()
+
+# Set the goals
+plan.set_goals({
+    "Increase Awareness": "Raise awareness about the NGO's mission and impact.",
+    "Engage Audience": "Foster interaction with supporters through posts and content.",
+    "Grow Following": "Expand the number of followers on social media platforms.",
+    "Promote Fundraising": "Drive donations and participation in fundraising campaigns.",
+    "Enhance Community": "Encourage volunteer sign-ups and community involvement."
+})
+
+# Set the target audience
+plan.set_target_audience({
+    "Supporters and Donors": "People who are already or may become donors.",
+    "Volunteers": "Individuals interested in volunteering with the NGO.",
+    "Beneficiaries": "Communities or individuals who benefit from the NGO's work.",
+    "Partners": "Other organizations or institutions that collaborate with the NGO."
+})
+
+# Set the platforms
+plan.set_platforms({
+    "Facebook": "Community engagement, event promotion.",
+    "Twitter": "Updates, real-time engagement.",
+    "Instagram": "Visual storytelling, campaigns.",
+    "LinkedIn": "Professional networking, partnerships.",
+    "YouTube": "Video content, storytelling.",
+    "TikTok": "Creative content for younger audiences."
+})
+
+# Set the content strategy
+plan.set_content_strategy({
+    "Content Types": [
+        "Informational Posts": "Updates about projects, success stories, impact reports.",
+        "Engagement Posts": "Polls, questions, interactive content.",
+        "Call-to-Action Posts": "Fundraising appeals, volunteer opportunities, event promotions.",
+        "Visual Content": "Photos, infographics, videos.",
+        "User-Generated Content": "Stories and testimonials from supporters."
+    ],
+    "Content Calendar": "Assign themes for each week, schedule posts around events, ensure regular updates."
+})
+
+# Set the posting schedule
+plan.set_posting_schedule({
+    "Facebook": "3-5 times per week",
+    "Twitter": "5-10 times per week",
+    "Instagram": "3-4 times per week",
+    "LinkedIn": "1-2 times per week",
+    "Best Times to Post": "Analyze engagement metrics for optimal times."
+})
+
+# Set the engagement strategy
+plan.set_engagement({
+    "Interaction Strategies": [
+        "Respond Promptly": "Reply to comments, messages, mentions.",
+        "Encourage Conversations": "Ask questions, foster discussions.",
+        "Acknowledge Contributions": "Thank supporters publicly."
+    ],
+    "Community Management": "Monitor mentions and hashtags, manage feedback professionally."
+})
+
+# Set the advertising strategy
+plan.set_advertising({
+    "Goals": "Increase reach and visibility, target demographics for fundraising.",
+    "Platforms": [
+        "Facebook & Instagram": "Targeted ads and sponsored posts.",
+        "LinkedIn": "Professional and organizational ads."
+    ]
+})
+
+# Set the metrics
+plan.set_metrics({
+    "Engagement": "Likes, shares, comments, retweets.",
+    "Reach": "Number of people who see posts.",
+    "Followers": "Growth in the number of followers.",
+    "Conversions": "Donations, event registrations, volunteer sign-ups.",
+    "Tools": ["Facebook Insights", "Twitter Analytics", "Instagram Insights", "Google Analytics"]
+})
+
+# Set the review strategy
+plan.set_review({
+    "Feedback Loop": "Regularly review performance, adjust strategy based on data.",
+    "Continuous Learning": "Stay updated with trends, experiment with new strategies.",
+    "Review Intervals": "Quarterly reviews to update the plan."
+})
+
+# Save the plan to a file
+plan.save_to_file('social_media_plan.json')
+
+# Display the plan
+plan.display_plan()
+How to Use This Script
+Initialize the Plan:
+
+Create an instance of SocialMediaPlan.
